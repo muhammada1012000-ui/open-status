@@ -1,0 +1,91 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1d2330;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --open: #15803d;
+  --open-bg: #dcfce7;
+  --closed: #b91c1c;
+  --closed-bg: #fee2e2;
+  --highlight: #eef2ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1218;
+    --card: #181c24;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #2a303c;
+    --open: #4ade80;
+    --open-bg: #12301f;
+    --closed: #f87171;
+    --closed-bg: #3a1717;
+    --highlight: #222838;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+}
+
+h1 { margin: 0 0 20px; font-size: 1.6rem; }
+h2 { margin: 32px 0 12px; font-size: 1rem; color: var(--muted); font-weight: 600; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  background: var(--border);
+}
+.status.open   { background: var(--open-bg);   color: var(--open); }
+.status.closed { background: var(--closed-bg); color: var(--closed); }
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.status.open .dot { animation: pulse 2s infinite; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.next-change { margin: 16px 0 4px; font-size: 1rem; }
+.clock { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { font-weight: 500; }
+td { text-align: right; color: var(--muted); }
+tr.today { background: var(--highlight); }
+tr.today th, tr.today td { font-weight: 700; color: var(--text); }
+
+.tz { margin: 12px 0 0; color: var(--muted); font-size: 0.8rem; }

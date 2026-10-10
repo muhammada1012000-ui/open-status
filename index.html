@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Are We Open?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1 id="business-name">My Business</h1>
+    <div id="status" class="status" aria-live="polite">
+      <span class="dot"></span>
+      <span id="status-text">Checking…</span>
+    </div>
+    <p id="next-change" class="next-change"></p>
+    <p id="clock" class="clock"></p>
+
+    <h2>Opening hours</h2>
+    <table id="hours"></table>
+    <p class="tz">Times shown in <span id="tz-label"></span></p>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
