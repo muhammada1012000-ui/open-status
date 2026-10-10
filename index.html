@@ -3,23 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Are We Open?</title>
+  <title>Azlan Foods</title>
+  <meta name="description" content="See which Azlan Foods restaurants are open right now.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="card">
-    <h1 id="business-name">My Business</h1>
-    <div id="status" class="status" aria-live="polite">
-      <span class="dot"></span>
-      <span id="status-text">Checking…</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span id="site-name" class="brand-name">Azlan Foods</span>
+      </a>
+      <span id="clock" class="header-clock"></span>
     </div>
-    <p id="next-change" class="next-change"></p>
-    <p id="clock" class="clock"></p>
+  </header>
 
-    <h2>Opening hours</h2>
-    <table id="hours"></table>
-    <p class="tz">Times shown in <span id="tz-label"></span></p>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Opening hours</p>
+      <h1 id="hero-title">Is it open right now?</h1>
+      <p id="tagline" class="tagline"></p>
+      <p id="summary" class="summary" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search restaurants" aria-label="Search restaurants">
+      <div class="filters" role="group" aria-label="Filter">
+        <button type="button" class="filter active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="open">Open now</button>
+        <button type="button" class="filter" data-filter="closed">Closed</button>
+      </div>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No restaurants match your search.</p>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> <span id="footer-name"></span></span>
+      <span id="tz-note"></span>
+    </div>
+  </footer>
 
   <script src="config.js"></script>
   <script src="app.js"></script>

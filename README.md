@@ -1,21 +1,20 @@
-# Are We Open?
+# Azlan Foods — Opening Hours
 
-A small static website that shows whether a business is currently **open** or **closed**, based on its weekly opening hours and time zone.
+A static website that shows which Azlan Foods restaurants are **open** or **closed** right now, based on each restaurant's weekly hours and time zone.
 
-- Live open/closed badge that updates every 30 seconds
-- "Open until…" / "Opens tomorrow at…" messages, plus a "closing soon" warning in the last hour
-- Weekly hours table with today highlighted
-- Supports split shifts and overnight hours
+Live site: https://muhammada1012000-ui.github.io/open-status/
+
+- Live "Open now", "Closing soon" or "Closed" badge on each restaurant, updated every 30 seconds
+- "Open until…" and "Opens tomorrow at…" messages
+- A count of how many restaurants are open, plus search and Open now / Closed filters
+- Today's hours on every card, with the full week one click away
+- Supports split shifts and hours past midnight
 - Light and dark mode, works on phones
 
-## Customize
+## Add or edit restaurants
 
-Edit `config.js` to set your business name, time zone and hours. No build step needed.
+Edit `config.js`. Each restaurant has a `name`, optional `cuisine`, `address`, `phone` and `timeZone`, and its `hours`. Copy one block to add another restaurant. No build step needed. Commit and push, and GitHub Pages updates the live site within about a minute.
 
 ## Run locally
 
 Open `index.html` in a browser.
-
-## Publish with GitHub Pages
-
-In the repository on GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**, choose `main` and `/ (root)`, then save. The site will appear at `https://<username>.github.io/open-status/`.
