@@ -144,7 +144,7 @@
 
     document.getElementById("summary").innerHTML =
       `<span class="summary-dot ${openCount ? "open" : "closed"}"></span>` +
-      `<strong>${openCount} of ${restaurants.length}</strong>&nbsp;restaurant${restaurants.length === 1 ? "" : "s"} open now`;
+      `<strong>${openCount} of ${restaurants.length}</strong> restaurant${restaurants.length === 1 ? "" : "s"} open now`;
 
     const q = query.trim().toLowerCase();
     const shown = items.filter(({ r, s }) => {
